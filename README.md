@@ -6,7 +6,7 @@ It features animated sprites, projectiles, collisions, A* pathfinding, increment
 two players, bonus weapons, 4 season ambiented phases with 'boss fight' on the last level of each, 
 gamepad controller control, and more!
 
-## Required libraries with links 
+## Required libraries with links (Windows setup)
 
 Here are my paths (as set in the project configuration). If you want you can set your own paths in project Properties -> Java Build Path -> Libraries
 
