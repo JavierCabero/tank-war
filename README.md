@@ -6,7 +6,7 @@ It features animated sprites, projectiles, collisions, A* pathfinding, increment
 two players, bonus weapons, 4 season ambiented phases with 'boss fight' on the last level of each, 
 gamepad controller control, and more!
 
-## Required libraries with links (Windows setup)
+### Required libraries with links (Windows setup)
 
 Here are my paths (as set in the project configuration). If you want you can set your own paths in project Properties -> Java Build Path -> Libraries
 
@@ -15,4 +15,12 @@ Here are my paths (as set in the project configuration). If you want you can set
 - slick-util.jar (at C:\LWJGL) [http://slick.ninjacave.com/]
 - jdom-2.0.5.jar (at C:\LWJGL) [http://www.jdom.org/downloads/]
 - jinput.jar     (at C:\JInput, natives at C:\JInput\natives-win) [http://ci.newdawnsoftware.com/job/JInput/lastBuild/artifact/dist/]
+ 
+### Controls
 
+All the controls can be seen by pressing the 'Controls' button in the main menu. 
+
+|               | First player  | Second player |
+| ------------- | ------------- | ------------- |
+| Movement      |     AWSD      |     JIKL      |
+| Content Cell  |   spacebar    |  right-ctrl   |
