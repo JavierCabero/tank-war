@@ -8,7 +8,9 @@ gamepad controller control, and more!
 
 ### Required libraries with links (Windows setup)
 
-Here are my paths (as set in the project configuration). If you want you can set your own paths in project Properties -> Java Build Path -> Libraries
+Download and extract the repo into a folder which will be the project folder you import into Eclipse. All paths should be set as follows.
+
+If you want you can set your own paths in project Properties -> Java Build Path -> Libraries
 
 - lwjgl.jar      (at C:\LWJGL, natives at C:\LWJGL\natives-win) [http://legacy.lwjgl.org/download.php]
 - lwjgl_util.jar (at C:\LWJGL) [same as before]
