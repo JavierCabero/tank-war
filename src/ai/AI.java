@@ -26,7 +26,7 @@ public class AI {
 	private int waitDelay = 0;
 	private int maxWait = 64;
 	private int maxPathUse = 5;
-	private int pathUse = -1;
+	private int pathUse = -1; 
 
 	private List<Direction> currentPath = new ArrayList<Direction>();
 	private Tile currentTile;
