@@ -99,6 +99,9 @@ public class LevelEngine implements GameState {
 			/* Load level */
 			loadSelectedFile();
 			
+			// PROVISIONAL: Level number
+			level.setLevelNumber(level.getLevelNumber()+1);
+			
 			/* Start stuff */
 			level.toggleSound();
 			

@@ -43,7 +43,7 @@ import core.Main;
 
 public class Level extends AbstractSquareArea implements GameState, View {
 
-	private static int levelNo = 1;
+	private static int levelNo = 0;
 	private static TrueTypeFont t;
 
 	/* Data */
