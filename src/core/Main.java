@@ -1,10 +1,25 @@
 package core;
 
-import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL11.GL_BLEND;
+import static org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT;
+import static org.lwjgl.opengl.GL11.GL_MODELVIEW;
+import static org.lwjgl.opengl.GL11.GL_ONE_MINUS_SRC_ALPHA;
+import static org.lwjgl.opengl.GL11.GL_PROJECTION;
+import static org.lwjgl.opengl.GL11.GL_SRC_ALPHA;
+import static org.lwjgl.opengl.GL11.glBlendFunc;
+import static org.lwjgl.opengl.GL11.glClear;
+import static org.lwjgl.opengl.GL11.glEnable;
+import static org.lwjgl.opengl.GL11.glLoadIdentity;
+import static org.lwjgl.opengl.GL11.glMatrixMode;
+import static org.lwjgl.opengl.GL11.glOrtho;
+import static org.lwjgl.opengl.GL11.glScissor;
+import static org.lwjgl.opengl.GL11.glViewport;
+
 import org.lwjgl.LWJGLException;
 import org.lwjgl.openal.AL;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
+import static util.Debugger.log;
 
 public class Main {
 
@@ -33,13 +48,14 @@ public class Main {
 		state = GameStateFactory.setGameState(GameStateFactory.MENU);
 
 		while (!Display.isCloseRequested()) {
-			// Render
 
-			glClear(GL_COLOR_BUFFER_BIT);
-
+			// Internal close request
 			if (isCloseRequested) {
 				break;
 			}
+			
+			// Clear screen
+			glClear(GL_COLOR_BUFFER_BIT);
 
 			// We check for this
 			state.input();
@@ -89,10 +105,7 @@ public class Main {
 		glViewport(0, 0, width, height);
 	}
 
-	private static void log(String msg) {
-		if (debug)
-			System.out.println("[Main] " + msg);
-	}
+
 
 	public static void main(String[] args) {
 		Main main = new Main();
