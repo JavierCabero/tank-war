@@ -3,7 +3,7 @@ package util;
 import java.util.ArrayList;
 
 /**
- * This class goal is to manage and control debug messages. You can specify all up to 5 different debug modes: <br>
+ * Manages debug messages. You can specify all up to 5 different debug modes: <br>
  * 
  * <ul>
  * <li><b>Aggressive</b>: show every debug message.</li>
@@ -26,7 +26,7 @@ public class Debugger {
 	public static final int MODE_PASSIVE 	= -1;
 	public static final int MODE_SUPPRESSED = -2;
 	
-	private static int mode = MODE_ACTIVE;
+	private static int mode = MODE_AGGRESSIVE;
 	
 	private static ArrayList<String> 	addList = new ArrayList<String>();
 	private static ArrayList<String> ignoreList = new ArrayList<String>();

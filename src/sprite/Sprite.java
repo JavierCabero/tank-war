@@ -38,7 +38,7 @@ public class Sprite implements Renderable {
 	/* Constructor */
 	public Sprite(SpriteType st) {
 		this.spriteType = st;
-		this.texture = TextureBuffer.getTexture(st.getName());
+		this.texture = SpriteFactory.getTexture(st.getName());
 
 		maxState = st.getMaxState();
 		// If needed we create an animation component

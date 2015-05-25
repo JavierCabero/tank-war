@@ -6,7 +6,7 @@ import audio.AudioBuffer;
 
 import sprite.Sprite;
 import sprite.SpriteType;
-import sprite.TextureBuffer;
+import sprite.SpriteFactory;
 
 import core.GameState;
 import core.GameStateFactory;
@@ -15,8 +15,8 @@ import core.Main;
 public class LevelEngine implements GameState {
 
 	/* Constants */
-	public static final String defaultLevel = "level_00.xml";
-	private String levelsDir = "res/levels/";
+	public static String defaultLevel = "levels/level_00.xml";
+	private String levelsDir = "res/";
 
 	/* Control variables */
 	// TODO: Implement in-game menu (also acts as pause)
@@ -116,7 +116,7 @@ public class LevelEngine implements GameState {
 
 	private void loadResources() {
 		/* Load sprites */
-		TextureBuffer.loadRemainingTextures();
+		SpriteFactory.loadRemainingTextures();
 
 		/* Load sounds */
 		AudioBuffer.loadRemainingSounds();

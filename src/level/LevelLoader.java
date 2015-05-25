@@ -21,10 +21,9 @@ import entity.Character;
 import entity.Enemy;
 import entity.EnemyRespawn;
 import entity.PlayerRespawn;
+import static util.Debugger.log;
 
 public class LevelLoader {
-
-	private static boolean debug = true;
 
 	public static Level loadFile(String path, boolean twoPlayers) {
 
@@ -163,7 +162,6 @@ public class LevelLoader {
 			e.printStackTrace();
 		} catch (IOException e) {
 			log("Level file not found, using default configuration");
-
 		}
 
 		/* Return the loaded level */
@@ -274,10 +272,5 @@ public class LevelLoader {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-	private static void log(String msg) {
-		if (debug)
-			System.out.println("[LevelLoader] " + msg);
 	}
 }

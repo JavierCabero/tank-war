@@ -1,16 +1,19 @@
 package gui;
 
 
+import javax.swing.JFileChooser;
+
+import level.LevelEngine;
+
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
-
-import core.GameState;
-import core.GameStateFactory;
-import core.Main;
 
 import sprite.Sprite;
 import sprite.SpriteType;
 import util.Action;
+import core.GameState;
+import core.GameStateFactory;
+import core.Main;
 
 public class Menu implements GameState {
 
@@ -58,6 +61,40 @@ public class Menu implements GameState {
 			}
 		}));
 		
+		historyButtons.addView(new Button(0, 0, SpriteType.TWO_PLAYERS_BUTTON, new Action() {
+			
+			public void execute() {
+				log("Custom game pressed");
+				//twoPlayers = true;
+				
+				JFileChooser fc = new JFileChooser(System.getProperty("user.dir") + "/res/custom"); 
+				int option = fc.showOpenDialog(null);
+				if (option == JFileChooser.APPROVE_OPTION) {
+					String path = fc.getSelectedFile().getName();
+					System.out.println(path);
+					if(path != null) {
+						LevelEngine.defaultLevel = "custom/" + path;
+					}
+				}
+				setGameState(GameStateFactory.START_GAME);
+				
+				
+				// TODO: Improved code usability
+				/*
+				loadGame() {
+					
+					// Setup loading screen
+					
+					// Asynchronous selected level load
+					   
+						// On load: Setup level viewer
+					 
+						// Have fun
+				}
+				*/
+			}
+		}));
+		
 		historyButtons.addView(new Button(0, 0, SpriteType.BACK_BUTTON, new Action() {
 			
 			public void execute() {
@@ -65,7 +102,6 @@ public class Menu implements GameState {
 				currentButtons = mainButtons;
 			}
 		}));
-
 	}
 
 	private void setupMainButtons() {

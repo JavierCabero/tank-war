@@ -9,11 +9,9 @@ import org.newdawn.slick.opengl.TextureLoader;
 import org.newdawn.slick.util.ResourceLoader;
 
 
-public class TextureBuffer {
+public class SpriteFactory {
 
-	private static HashMap<String, Texture> textures = new HashMap<String, Texture>();
-	
-	
+	private static HashMap<String, Texture> textures = new HashMap<String, Texture>();	
 	
 	/** Loads all the remaining sprites */
 	public static void loadRemainingTextures() {
@@ -35,6 +33,7 @@ public class TextureBuffer {
 
 		return texture;
 	}
+	
 	private static Texture loadTexture(String path) {
 		try {
 			return TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("res/sprites/" + path + ".png"));
@@ -45,5 +44,4 @@ public class TextureBuffer {
 		}
 		return null;
 	}
-
 }

@@ -126,5 +126,4 @@ public class Main {
 
 	// TODO: Tutorial
 	// TODO: Base war
-
 }
