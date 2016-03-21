@@ -35,7 +35,7 @@ public class GameStateFactory {
 			return gameStates[MENU];
 		case EXIT:
 			log("Exiting...");
-			Main.setCloseRequested(true);
+			TankWar.setCloseRequested(true);
 			return null;
 		case START_GAME:
 			log("Starting game...");
@@ -59,7 +59,7 @@ public class GameStateFactory {
 					}
 
 					public void setGameState(int state) {
-						Main.setGameState(state);
+						TankWar.setGameState(state);
 					}
 
 					public void input() {
@@ -90,7 +90,7 @@ public class GameStateFactory {
 					}
 
 					public void setGameState(int state) {
-						Main.setGameState(state);
+						TankWar.setGameState(state);
 					}
 
 					public void input() {
@@ -125,7 +125,7 @@ public class GameStateFactory {
 					}
 
 					public void setGameState(int state) {
-						Main.setGameState(state);
+						TankWar.setGameState(state);
 					}
 
 				};
@@ -136,7 +136,7 @@ public class GameStateFactory {
 			if (gameStates[LEVEL_EDITOR] == null) {
 				gameStates[LEVEL_EDITOR] = new LevelEditor();
 			}
-			Main.setUpScreen(Main.EDITOR_WIDTH, Main.EDITOR_HEIGHT, Main.EDITOR_TITLE);
+			TankWar.setUpScreen(TankWar.EDITOR_WIDTH, TankWar.EDITOR_HEIGHT, TankWar.EDITOR_TITLE);
 			return gameStates[LEVEL_EDITOR];
 		default:
 			System.out.println("[Main] Invalid action: " + gameState);

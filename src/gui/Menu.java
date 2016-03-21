@@ -13,7 +13,7 @@ import sprite.SpriteType;
 import util.Action;
 import core.GameState;
 import core.GameStateFactory;
-import core.Main;
+import core.TankWar;
 
 public class Menu implements GameState {
 
@@ -159,7 +159,7 @@ public class Menu implements GameState {
 	}
 
 	public void setGameState(int state) {
-		Main.setGameState(state);
+		TankWar.setGameState(state);
 	}
 
 	public boolean isTwoPlayers() {

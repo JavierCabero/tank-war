@@ -18,7 +18,7 @@ import util.Action;
 
 import core.GameState;
 import core.GameStateFactory;
-import core.Main;
+import core.TankWar;
 
 public class LevelEditor implements GameState {
 
@@ -55,7 +55,7 @@ public class LevelEditor implements GameState {
 	private ViewSquareArea tileDeployList = new ViewSquareArea(8, level_y_offset, 76, 152);
 	private ViewSquareArea respawnDeployList = new ViewSquareArea(8, level_y_offset + 152 + 8, 76, 76);
 	private ViewSquareArea enemyDeployList = new ViewSquareArea(8, level_y_offset + 152 + 8 + 76 + 8, 76, 76);
-	private ViewSquareArea menuList = new ViewSquareArea(8, 8, Main.EDITOR_WIDTH - 16, 48);
+	private ViewSquareArea menuList = new ViewSquareArea(8, 8, TankWar.EDITOR_WIDTH - 16, 48);
 	private ViewSquareArea levelSettingList = new ViewSquareArea(level_x_offset + 640 + 8, 64, 144, 400);
 
 	/* ------------- CONSTRUCTOR ------------- */
@@ -110,12 +110,12 @@ public class LevelEditor implements GameState {
 		VerticalLayout a1 = new VerticalLayout();
 		a1.setTopView(respawnDeployList);
 		a1.setBottomView(enemyDeployList);
-		a1.setMidPoint(Main.EDITOR_HEIGHT - (level_y_offset + 152 + 8 + 76 + 8));
+		a1.setMidPoint(TankWar.EDITOR_HEIGHT - (level_y_offset + 152 + 8 + 76 + 8));
 
 		VerticalLayout a2 = new VerticalLayout();
 		a2.setTopView(tileDeployList);
 		a2.setBottomView(a1);
-		a2.setMidPoint(Main.EDITOR_HEIGHT - (level_y_offset + 152 + 8));
+		a2.setMidPoint(TankWar.EDITOR_HEIGHT - (level_y_offset + 152 + 8));
 
 		HorizontalLayout l1 = new HorizontalLayout();
 		l1.setLeftView(a2);
@@ -131,7 +131,7 @@ public class LevelEditor implements GameState {
 		layout = new VerticalLayout();
 		layout.setTopView(menuList);
 		layout.setBottomView(l2);
-		layout.setMidPoint(Main.EDITOR_HEIGHT - level_y_offset);
+		layout.setMidPoint(TankWar.EDITOR_HEIGHT - level_y_offset);
 
 	}
 
@@ -562,7 +562,7 @@ public class LevelEditor implements GameState {
 		layout.render();
 
 		level.renderRespawns();
-		level.renderEnemyListAt(Main.EDITOR_WIDTH - 256, Main.EDITOR_HEIGHT - 256);
+		level.renderEnemyListAt(TankWar.EDITOR_WIDTH - 256, TankWar.EDITOR_HEIGHT - 256);
 
 		layout.onFocus(Mouse.getX(), Mouse.getY());
 
@@ -570,8 +570,8 @@ public class LevelEditor implements GameState {
 
 	/* ------------- OTHER METHODS ------------- */
 	public void setGameState(int state) {
-		Main.setGameState(state);
-		Main.setUpScreen(Main.MAIN_WIDTH, Main.MAIN_HEIGHT, Main.MAIN_TITLE);
+		TankWar.setGameState(state);
+		TankWar.setUpScreen(TankWar.MAIN_WIDTH, TankWar.MAIN_HEIGHT, TankWar.MAIN_TITLE);
 	}
 
 	public static void log(String msg) {

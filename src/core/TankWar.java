@@ -21,7 +21,7 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import static util.Debugger.log;
 
-public class Main {
+public class TankWar {
 
 	/* Display Constants */
 	public static final int MAIN_WIDTH = 640 + 160;
@@ -108,7 +108,7 @@ public class Main {
 
 
 	public static void main(String[] args) {
-		Main main = new Main();
+		TankWar main = new TankWar();
 		log("Starting game loop");
 		main.start(); // Start game loop
 	}

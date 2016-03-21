@@ -39,7 +39,7 @@ import util.Action;
 import core.GameObject;
 import core.GameState;
 import core.GameStateFactory;
-import core.Main;
+import core.TankWar;
 
 public class Level extends AbstractSquareArea implements GameState, View {
 
@@ -563,7 +563,7 @@ public class Level extends AbstractSquareArea implements GameState, View {
 
 	public void setGameState(int state) {
 		stopEverything();
-		Main.setGameState(state);
+		TankWar.setGameState(state);
 	}
 
 	public void removeBonus(Bonus bonus) {

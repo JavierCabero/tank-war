@@ -3,14 +3,13 @@ package level;
 import org.lwjgl.input.Keyboard;
 
 import audio.AudioBuffer;
-
-import sprite.Sprite;
-import sprite.SpriteType;
-import sprite.SpriteFactory;
-
 import core.GameState;
 import core.GameStateFactory;
-import core.Main;
+import core.TankWar;
+import sprite.Sprite;
+import sprite.SpriteFactory;
+import sprite.SpriteType;
+import util.Debugger;
 
 public class LevelEngine implements GameState {
 
@@ -103,7 +102,11 @@ public class LevelEngine implements GameState {
 			level.setLevelNumber(level.getLevelNumber()+1);
 			
 			/* Start stuff */
-			level.toggleSound();
+			try {
+				level.toggleSound();
+			} catch (Exception e) {
+				Debugger.log("Can't load music");
+			}
 			
 			counter--; // Remember to make the last counter decrement
 			
@@ -139,7 +142,7 @@ public class LevelEngine implements GameState {
 	public void setGameState(int state) {
 		pause = false;
 		level.stopEverything();
-		Main.setGameState(state);
+		TankWar.setGameState(state);
 	}
 
 	public void restart() {

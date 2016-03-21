@@ -1,21 +1,17 @@
 package entity;
 
 import java.util.ArrayList;
-
-import level.Level;
-
-import net.java.games.input.Component;
-import net.java.games.input.Controller;
-import net.java.games.input.ControllerEnvironment;
+import java.util.Random;
 
 import org.lwjgl.input.Keyboard;
 
-
-
+import ai.Direction;
+import level.Level;
+import net.java.games.input.Component;
+import net.java.games.input.Controller;
+import net.java.games.input.ControllerEnvironment;
 import sprite.Sprite;
 import sprite.SpriteType;
-
-import ai.Direction;
 
 public class Player extends ArmedCharacter {
 
@@ -72,6 +68,15 @@ public class Player extends ArmedCharacter {
 					level.addProjectile(new Projectile(getWeaponX(), getWeaponY(), pt, getDirection(), this, level));
 				}
 			} else {
+				
+				if (Keyboard.isKeyDown(Keyboard.KEY_L)) {
+					Random r = new Random();
+					int x = 20+r.nextInt(576);
+					int y = 20+r.nextInt(576);
+					Direction[] dirs = new Direction[] { Direction.UP, Direction.DOWN, Direction.LEFT, Direction.RIGHT };
+					level.addProjectile(new Projectile(x, y, ProjectileType.GIANT_ROCKET, dirs[r.nextInt(4)], this, level));
+				}
+				
 				if (Keyboard.isKeyDown(Keyboard.KEY_W)) {
 					dir = Direction.UP;
 				} else if (Keyboard.isKeyDown(Keyboard.KEY_A)) {
@@ -114,7 +119,6 @@ public class Player extends ArmedCharacter {
 				level.addProjectile(new Projectile(getWeaponX(), getWeaponY(), pt, getDirection(), this, level));
 			}
 		}
-
 	}
 
 	public void addBonusProjectile(ProjectileType projectileType, int ammount) {

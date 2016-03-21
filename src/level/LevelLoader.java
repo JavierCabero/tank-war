@@ -162,6 +162,7 @@ public class LevelLoader {
 			e.printStackTrace();
 		} catch (IOException e) {
 			log("Level file not found, using default configuration");
+			e.printStackTrace();
 		}
 
 		/* Return the loaded level */
