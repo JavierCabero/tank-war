@@ -35,7 +35,7 @@ public class TankWar {
 	/* Control Variables */
 	private static GameState state;
 	private static boolean isCloseRequested = false;
-	private static boolean debug = true;
+	private static boolean debug = false;
 
 	/* Videogame */
 	public void start() {
